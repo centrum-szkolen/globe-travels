@@ -16,6 +16,10 @@
   }
 }
 
+/* html {
+  font-size: 0.9rem;
+} */
+
 /* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -25,3 +29,26 @@
     )
     rgb(var(--background-start-rgb));
 } */
+
+
+.description h3 {
+   font-weight: bold;
+   margin-top: 25px;
+   margin-bottom: 5px;
+}
+
+.custom-title {
+  position: relative;
+}
+
+.custom-title::before {
+  background: #fbc421;
+    border-radius: 10px;
+    bottom: -6px;
+    content: "";
+    display: block;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    width: 105px;
+}
