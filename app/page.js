@@ -1,47 +1,36 @@
 
 
+import { GET_ALL_TRAVELS } from "@/gql/getAllTravels"
+import { cmsConnect } from "@/utils/cmsConnector"
+import Link from "next/link";
 
-async function getData() {
-  
+
+
+
+export async function getData() {
+  const data = await cmsConnect(GET_ALL_TRAVELS)
+
+  return data;
+
 }
 
 
 
 
-export default function Home() {
+export default async function Home() {
+
+  const {offers} = await getData()
+
+  console.log(offers)
+
+
   return (
+
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      
+        {offers.map(offer => <Link key={offer.id} href={`/oferta/${offer.slug}`}>{offer.title}</Link>)}
     </main>
+
   )
 }
 
-// query MyQuery {
-//   offers {
-//     id
-//     title
-//     slug
-//   }
-// }
 
-
-
-// query Offer {
-//   offer(where:{id:"clmoj9y1dt7490bwb6zo61a5a"}) {
-//     amenities
-//     createdAt
-//     id
-//     images {
-//       url
-//     }
-//     location {
-//       latitude
-//       longitude
-//     }
-//     title
-//     stars
-//     description {
-//       html
-//     }
-//   }
-// }
