@@ -15,8 +15,6 @@ const TravelWeather = ({location}) => {
     setWeather(data)
   }
 
-  console.log(weather)
-
   return (
     <div>
         <h3 className='custom-title mb-6 text-3xl font-bold'>{weather?.name} - pogoda</h3>

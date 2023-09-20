@@ -2,7 +2,6 @@ import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import React from "react";
 
 const Amenities = ({ items }) => {
-  console.log(items);
 
   return (
     <div className="grid grid-cols-4 mt-3 gap-5">
